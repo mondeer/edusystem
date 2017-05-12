@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="col-md-10">
-      <a class="btn btn-success btn-lg pull-right" href="/schooladmin/teacher/add">View Tutors</a>
+      <a class="btn btn-success btn-lg pull-right" href="/countyadmin/teacher/add">add Tutors</a>
         <table id="example2" class="table table-bordered table-striped">
             <thead>
               <tr>

@@ -8,7 +8,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="{{ asset ('dash/bootstrap/css/bootstrap.min.css')}}">
-
+  {!! Charts::assets() !!}
   <link rel="stylesheet" href="{{ asset ('dash/bootstrap/js/bootstrap-formhelpers-phone.js')}}">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -102,8 +102,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/schooladmin/student/create"><i class="fa fa-circle-o"></i> Enroll Student</a></li>
-            <li><a href="/schooladmin/student/view"><i class="fa fa-circle-o"></i> View Students</a></li>
+            <li><a href="/schooladmin/students/enroll"><i class="fa fa-circle-o"></i> Enroll Student</a></li>
+            <li><a href="/schooladmin/students/view"><i class="fa fa-circle-o"></i> View Students</a></li>
           </ul>
         </li>
 
@@ -157,9 +157,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-pencil"></i> Acquisition Request</a></li>
-            <li><a href="#"><i class="fa fa-binoculars"></i>Acquisition Status</a></li>
-            <li><a href="#"><i class="fa fa-eye"></i> Check VCT Assets</a></li>
+            <li><a href="/schooladmin/assets/request"><i class="fa fa-pencil"></i> Acquisition Request</a></li>
+            <li><a href="/schooladmin/assets/status"><i class="fa fa-binoculars"></i>Acquisition Status</a></li>
           </ul>
         </li>
 
@@ -213,9 +212,14 @@
 
 <script>
   $(".delete").on("submit", function(){
-    return confirm("You are about to delete a leave record, Continue?");
+    return confirm("You are about to delete a record, Continue?");
   });
 </script>
+<script>
+  $(".deletestu").on("submit", function(){
+    return confirm("Are you certain that you want to remove this student from the Database?");
+  });
+</script>u
 <!-- Bootstrap 3.3.6 -->
 <script src="{{ asset ('dash/bootstrap/js/bootstrap.min.js')}}"></script>
 <!-- Morris.js charts -->

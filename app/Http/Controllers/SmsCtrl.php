@@ -16,7 +16,7 @@ class SmsCtrl extends Controller
 
       $name = $request->input('name');
 
-      $message = ('Hi '.$name.', Gideon Moi wishes to inform you of his aspiration to serve you for another 5 years as your senator, you are a blessing');
+      $message = ('Hi '.$name.', Transnzoia County welcomes you to the ministry of education and ICT, we are happy to serve');
 
       Telco::send($mobile, $message);
 

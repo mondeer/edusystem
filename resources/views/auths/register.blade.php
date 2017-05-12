@@ -13,6 +13,12 @@
   <form class="form-horizontal" role="form" method="POST" action="/system/register">
       {{ csrf_field() }}
 
+      @if( session('error') )
+          <div class="alert alert-danger">
+            {{ session('error') }}
+          </div>
+      @endif
+      
       <div class="form-group">
           <label for="name" class="col-md-4 control-label">First Name</label>
 
@@ -42,7 +48,6 @@
           <div class="col-md-4">
             <select class="form-control" name="role">
               <option></option>
-              <option value="system">System Admin</option>
               <option value="county">County Admin</option>
               <option value="school">School Admin</option>
             </select>

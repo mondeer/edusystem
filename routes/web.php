@@ -26,9 +26,7 @@ Route::get('/system/admin', function(){
 
 
 // County Admin routes
-Route::get('/county/admin', function(){
-  return view('county.dashboard');
-});
+Route::get('/county/admin', 'AdminCtrl@index');
 
 Route::get('/county/schools/create', 'SchoolCtrl@create');
 
@@ -44,13 +42,17 @@ Route::put('/county/school/{id}', 'SchoolCtrl@update');
 
 Route::get('/countyadmin/tutors/view', 'TutorCtrl@viewTutors');
 
+Route::get('/countyadmin/students/view', 'StudentCtrl@students');
+
+Route::get('/countyadmin/expenses/viewall', 'ExpenseCtrl@allExpenses');
+
+Route::delete('/countyadmin/expense/{id}/delete', 'ExpenseCtrl@destroy');
+
 // end county admin routes
 
 
 // School Admin routes
-Route::get('/school/admin', function(){
-  return view('schools.dashboard');
-});
+Route::get('/school/admin', 'SchminCtrl@index');
 
 Route::get('/schooladmin/teacher/add', 'TutorCtrl@index');
 
@@ -66,7 +68,23 @@ Route::post('/schooladmin/expenses/add', 'ExpenseCtrl@addExpense');
 
 Route::get('/schooladmin/expenses/view', 'ExpenseCtrl@viewExpense');
 
+Route::get('/schooladmin/assets/request', 'AssetCtrl@index');
 
+Route::post('/schooladmin/assets/request', 'AssetCtrl@reqAsset');
+
+Route::get('/schooladmin/assets/view', 'AssetCtrl@viewAssets');
+
+Route::get('/schooladmin/students/enroll', 'StudentCtrl@index');
+
+Route::post('/schooladmin/students/enroll', 'StudentCtrl@enrollStudent');
+
+Route::get('/schooladmin/students/view', 'StudentCtrl@viewStudent');
+
+Route::delete('/schooladmin/students/{id}/delete', 'StudentCtrl@destroy');
+
+Route::get('/invoice', function(){
+  return view('schools.expenses.receipt');
+});
 // end school admin routes
 
 // sms api

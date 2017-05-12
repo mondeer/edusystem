@@ -19,4 +19,8 @@ class School extends Model
     public function teachers() {
       return $this->hasMany('transcounty\Teacher');
     }
+
+    public function students() {
+      return $this->hasMany('transcounty\Student');
+    }
 }

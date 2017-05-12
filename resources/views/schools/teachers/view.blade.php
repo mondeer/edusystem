@@ -9,8 +9,12 @@
                 <th>ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Expenditure Date</th>
-                <th>Deregister</th>
+                <th> Email</th>
+                <th> Naional ID</th>
+                <th> Gender</th>
+                <th> Phone</th>
+                <th> Address</th>
+                <th> Emmployment Date</th>
               </tr>
             </thead>
             <tbody>
@@ -24,9 +28,9 @@
                   <td>{{$tutor->gender}}</td>
                   <td>{{$tutor->phone}}</td>
                   <td>{{$tutor->address}}</td>
-                  <td>{{$tutor->created_at}}</td>
+                  <td>{{$tutor->created_at->format('l j F Y')}}</td>
                   <td>
-                    <form class="delete" action="/schooladmin/teacher/{{ $tutor->id }}/delete" method="post">
+                    <form class="delete" action="/countyadmin/tutor/{{ $tutor->id }}/delete" method="post">
                       <input type="hidden" name="_method" value="delete">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
                       <input type="submit" class="btn btn-danger" value="Delete">

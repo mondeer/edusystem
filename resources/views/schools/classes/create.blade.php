@@ -11,28 +11,28 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div class="form-group">
-                <label class="col-md-4 control-label">VCT Reg No</label>
+                <label class="col-md-4 control-label">VTC Reg No</label>
                 <div class="col-md-6">
                     <input type="text" class="form-control" name="registration" value="{{ old('registration') }}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="col-md-4 control-label">VCT Name</label>
+                <label class="col-md-4 control-label">VTC Name</label>
                 <div class="col-md-6">
                     <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="col-md-4 control-label">VCT Email</label>
+                <label class="col-md-4 control-label">VTC Email</label>
                 <div class="col-md-6">
                     <input type="text" class="form-control" name="email" value="{{ old('email') }}">
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="col-md-4 control-label">VCT Location</label>
+                <label class="col-md-4 control-label">VTC Location</label>
                 <div class="col-md-6">
                     <input type="text" class="form-control" name="location" value="{{ old('location') }}">
                 </div>

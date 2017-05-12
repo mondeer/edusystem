@@ -38,9 +38,21 @@ class ExpenseCtrl extends Controller
 
       $expenses = Expense::where('school_id', $shule->id)->get();
 
-      // dd($expenses);
-
       return view('schools.expenses.view')->with('expenses', $expenses);
 
+    }
+
+    public function allExpenses() {
+      $schools = School::with('expenses')->get();
+
+      return view('county.expenses.view')->with('schools', $schools);
+    }
+
+    public function destroy($id) {
+      $expense = Expense::findOrFail($id);
+
+      $expense->delete();
+
+      return redirect()->back();
     }
 }

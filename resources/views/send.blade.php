@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('sms')
+@section('content')
 <div class="">
   <form class="form-horizontal" action="/send" method="post">
     {{csrf_field()}}

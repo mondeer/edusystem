@@ -40,7 +40,7 @@
 					  <p class="bold text-left">Monday - Friday, 8am to 5pm </p>
 					</div>
           <div class="col-sm-4 col-md-">
-            <p class="bold text-center">{{ Carbon\Carbon::now()->year}}, {{ Carbon\Carbon::now()->month}}, {{ Carbon\Carbon::now()->day}} </p>
+            <p class="bold text-center">{{ Carbon\Carbon::now()->format('l j F Y')}} </p>
 					</div>
 					<div class="col-sm-4 col-md-4">
 					<p class="bold text-right">Call us now +254 700 000000</p>

@@ -8,7 +8,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="{{ asset ('dash/bootstrap/css/bootstrap.min.css')}}">
-
+  {!! Charts::assets() !!}
   <link rel="stylesheet" href="{{ asset ('dash/bootstrap/js/bootstrap-formhelpers-phone.js')}}">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -101,8 +101,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/county/schools/create"><i class="fa fa-circle-o"></i>Register New VCT</a></li>
-            <li><a href="/county/schools/view"><i class="fa fa-circle-o"></i> View VCTs</a></li>
+            <li><a href="/county/schools/create"><i class="fa fa-circle-o"></i>Register New VTC</a></li>
+            <li><a href="/county/schools/view"><i class="fa fa-circle-o"></i> View VTCs</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -113,8 +113,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/schooladmin/student/create"><i class="fa fa-circle-o"></i> View Students</a></li>
-            <li><a href="/schooladmin/student/view"><i class="fa fa-circle-o"></i> View Students</a></li>
+            <!-- <li><a href="/schooladmin/student/create"><i class="fa fa-circle-o"></i> View Students</a></li> -->
+            <li><a href="/countyadmin/students/view"><i class="fa fa-circle-o"></i> View Students</a></li>
           </ul>
         </li>
 
@@ -133,14 +133,15 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-money"></i> <span>Manage Fees</span>
+            <i class="fa fa-money"></i> <span>Accounting</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/schooladmin/student/create"><i class="fa fa-circle-o"></i> Fee Summary per VCT</a></li>
-            <li><a href="/schooladmin/student/view"><i class="fa fa-circle-o"></i> View Students</a></li>
+            <li><a href="/countyadmin/school/fee"><i class="fa fa-money"></i> Fee Audit </a></li>
+            <li><a href="/countyadmin/expenses/viewall"><i class="fa fa-money"></i> View VTC Expenses</a></li>
+            <li><a href="/countyadmin/bugdet/allocate"><i class="fa fa-money"></i> Allocate Budget</a></li>
           </ul>
         </li>
 
@@ -152,7 +153,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Assets Per VCT</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Assets Per VTC</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Approve Asset Acquisition Request</a></li>
           </ul>
         </li>
@@ -178,6 +179,7 @@
 
     <!-- Main content -->
     <section class="content">
+
       <div class="row">
         @yield('content')
       </div>
@@ -206,7 +208,14 @@
 </script>
 <script>
   $(".delete").on("submit", function(){
-    return confirm("You are about to delete a leave record, Continue?");
+    return confirm("You are about to delete a record, Continue?");
+  });
+
+</script>
+
+<script>
+  $(".deletexp").on("submit", function(){
+    return confirm("You are about to permanently delete an expense record, Continue?");
   });
 
 </script>
