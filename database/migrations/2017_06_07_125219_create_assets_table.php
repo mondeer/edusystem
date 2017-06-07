@@ -12,7 +12,7 @@ class CreateAssetsTable extends Migration
             $table->increments('id');
             $table->integer('school_id');
             $table->string('asset_name');
-            $table->string('asset_name');
+            $table->string('asset_type');
             $table->string('price');
             $table->string('manufacturer')->nullable();
             $table->string('state');

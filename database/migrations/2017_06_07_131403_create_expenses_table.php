@@ -13,7 +13,7 @@ class CreateExpensesTable extends Migration
             $table->integer('school_id');
             $table->string('expense_name');
             $table->string('amount');
-            $table->date('date');
+            $table->date('expense_date');
             $table->string('comments')->nullable();
             $table->string('photo')->nullable();
             $table->timestamps();
