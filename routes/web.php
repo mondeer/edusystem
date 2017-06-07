@@ -12,6 +12,9 @@ Route::post('/system/register', 'RegisterCtrl@postRegister');
 
 Route::post('/login', 'LoginCtrl@login');
 
+
+Route::post('/logout', 'LoginCtrl@logout');
+
 // System Admin routes
 Route::get('/system/admin', function(){
   return view('system.dashboard');
