@@ -31,8 +31,22 @@ Route::get('/county/schools/create', 'SchoolCtrl@create');
 
 Route::post('/county/schools/create', 'SchoolCtrl@postCreate');
 
+Route::get('/county/schools/view', 'SchoolCtrl@view');
+
+Route::delete('/county/school/{id}', 'SchoolCtrl@destroy');
+
+Route::get('/county/school/{id}', 'SchoolCtrl@edit');
+
+Route::put('/county/school/{id}', 'SchoolCtrl@update');
+
 
 // end county admin routes
+
+
+// School Admin routes
+Route::get('/school/admin', function(){
+  return view('schools.dashboard');
+});
 
 // sms api
 

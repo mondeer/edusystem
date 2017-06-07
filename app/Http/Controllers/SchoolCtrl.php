@@ -31,6 +31,44 @@ class SchoolCtrl extends Controller
       $role = Sentinel::findRoleBySlug('school');
       $role->users()->attach($user);
 
+      return redirect('/county/schools/view');
+    }
+
+    public function view() {
+      $schools = School::simplePaginate('15');
+
+      return view('county.schools.view')->with('schools', $schools);
+    }
+    public function edit($id) {
+      $school = School::findOrFail($id);
+
+      return view('county.schools.update')->with('school', $school);
+    }
+
+    public function update(Request $request, $id) {
+      $school = School::findOrFail($id);
+
+      $school->name = $request->input('name');
+      $school->email = $request->input('email');
+      $school->location = $request->input('location');
+      $school->save();
+
+      return redirect('/county/schools/view');
+    }
+
+    public function destroy($id) {
+      $school = School::findOrFail($id);
+
+      $email = [
+        'login' => $school->email,
+      ];
+
+      $user = Sentinel::findByCredentials($email);
+
+      $user->delete();
+
+      $school->delete();
+
       return redirect()->back();
     }
 }

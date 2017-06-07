@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Medicio landing page template for Health niche</title>
+    <title>TransNzoia County || County Admin</title>
 
     <!-- css -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -51,7 +51,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/">
                     <img src="img/logo.png" alt="" width="150" height="40" />
                 </a>
             </div>
@@ -59,8 +59,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 			  <ul class="nav navbar-nav">
-				<li class="active"><a href="#intro">Home</a></li>
-				<li><a href="#service">Service</a></li>
+				<li class="active"><a href="/">Register</a></li>
+				<li><a href="/">Help?</a></li>
 			  </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -73,12 +73,12 @@
 		<div class="intro-content">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-6">
+					<div class="col-lg-6 imond">
 					<div class="wow fadeInDown" data-wow-offset="0" data-wow-delay="0.1s">
-					<h2 class="h-ultra">Login to get ACCESS</h2>
+					<h2  class="h-ultra imondwhite">Login to get ACCESS</h2>
 					</div>
 					<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.1s">
-					<h4 class="h-light">We Value Security, </h4>
+					<h4 class="h-light imondwhite">We Value Security, </h4>
 					</div>
 						<div class="well well-trans">
                   <form class="form-horizontal" role="form" method="POST" action="/login">
@@ -122,7 +122,7 @@
                                     Login
                                 </button>
 
-                                <a class="" href="/register">
+                                <a class="" href="/system/register">
                                     Not yet Registered?
                                 </a>
                             </div>
@@ -132,9 +132,9 @@
 
 
 					</div>
-					<div class="col-lg-6">
+					<div class="col-lg-6 ">
 						<div class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
-						<img src="img/dummy/img-1.png" class="img-responsive" alt="" />
+						<img src="img/kha.jpg" class="img-responsive" alt="" />
 						</div>
 					</div>
 				</div>
