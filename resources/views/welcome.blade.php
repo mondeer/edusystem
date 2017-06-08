@@ -35,26 +35,29 @@
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="top-area">
 			<div class="container">
-				<div class="row">
-					<div class="col-sm-6 col-md-6">
-					<p class="bold text-left">Monday - Saturday, 8am to 10pm </p>
+        <div class="row">
+					<div class="col-sm-4 col-md-4">
+					  <p class="bold text-left">Monday - Friday, 8am to 5pm </p>
 					</div>
-					<div class="col-sm-6 col-md-6">
-					<p class="bold text-right">Call us now +62 008 65 001</p>
+          <div class="col-sm-4 col-md-">
+            <p class="bold text-center">Today: {{ Carbon\Carbon::now()->year}}, {{ Carbon\Carbon::now()->month}}, {{ Carbon\Carbon::now()->day}} </p>
+					</div>
+					<div class="col-sm-4 col-md-4">
+					<p class="bold text-right">Call us now +254 700 000000</p>
 					</div>
 				</div>
 			</div>
 		</div>
         <div class="container navigation">
 
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="/">
-                    <img src="img/logo.png" alt="" width="150" height="40" />
-                </a>
-            </div>
+          <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                  <i class="fa fa-bars"></i>
+              </button>
+              <a class="navbar-brand" href="/">
+                  <img src="img/logo.png" alt="" width="150" height="40" />
+              </a>
+          </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
@@ -75,59 +78,50 @@
 				<div class="row">
 					<div class="col-lg-6 imond">
 					<div class="wow fadeInDown" data-wow-offset="0" data-wow-delay="0.1s">
+            <br><br>
 					<h2  class="h-ultra imondwhite">Login to get ACCESS</h2>
 					</div>
 					<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.1s">
 					<h4 class="h-light imondwhite">We Value Security, </h4>
 					</div>
 						<div class="well well-trans">
-                  <form class="form-horizontal" role="form" method="POST" action="/login">
-                        {{ csrf_field() }}
+              <form class="form-horizontal" role="form" method="POST" action="/login">
+                    {{ csrf_field() }}
 
-                        @if( session('error') )
-                            <div class="alert alert-danger">
-                              {{ session('error') }}
-                            </div>
-                        @endif
-
-                        <div class="form-group">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-                            </div>
+                    @if( session('error') )
+                        <div class="alert alert-danger">
+                          {{ session('error') }}
                         </div>
+                    @endif
 
-                        <div class="form-group">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                    <div class="form-group">
+                        <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-                            </div>
+                        <div class="col-md-6">
+                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
                         </div>
+                    </div>
 
-                        <!-- <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div> -->
+                    <div class="form-group">
+                        <label for="password" class="col-md-4 control-label">Password</label>
 
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="" href="/system/register">
-                                    Not yet Registered?
-                                </a>
-                            </div>
+                        <div class="col-md-6">
+                            <input id="password" type="password" class="form-control" name="password" required>
                         </div>
-                    </form>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-8 col-md-offset-4">
+                            <button type="submit" class="btn btn-primary">
+                                Login
+                            </button>
+
+                            <a class="" href="/system/register">
+                                Not yet Registered?
+                            </a>
+                        </div>
+                    </div>
+                </form>
 						</div>
 
 
@@ -151,20 +145,20 @@
 				<div class="col-sm-6 col-md-4">
 					<div class="wow fadeInDown" data-wow-delay="0.1s">
 					<div class="widget">
-						<h5>About Medicio</h5>
+						<h5>Ministry of Education</h5>
 						<p>
-						Lorem ipsum dolor sit amet, ne nam purto nihil impetus, an facilisi accommodare sea
+						The ministry of education in Trans Nzoia County is a vibrant ministry full of activities and innovations, and this portal is one of them
 						</p>
 					</div>
 					</div>
 					<div class="wow fadeInDown" data-wow-delay="0.1s">
 					<div class="widget">
-						<h5>Information</h5>
+						<h5>Service Charter</h5>
 						<ul>
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Laboratory</a></li>
-							<li><a href="#">Medical treatment</a></li>
-							<li><a href="#">Terms & conditions</a></li>
+							<li><a href="#">Timely</a></li>
+							<li><a href="#">Accountable</a></li>
+							<li><a href="#">Frinedly</a></li>
+							<li><a href="#">Courteous</a></li>
 						</ul>
 					</div>
 					</div>
@@ -172,28 +166,28 @@
 				<div class="col-sm-6 col-md-4">
 					<div class="wow fadeInDown" data-wow-delay="0.1s">
 					<div class="widget">
-						<h5>Medicio center</h5>
+						<h5>CEC</h5>
 						<p>
-						Nam leo lorem, tincidunt id risus ut, ornare tincidunt naqunc sit amet.
+						"You Know what you need, come state it and we will do our best to deliver beyond your expectattion"
 						</p>
 						<ul>
 							<li>
 								<span class="fa-stack fa-lg">
 									<i class="fa fa-circle fa-stack-2x"></i>
 									<i class="fa fa-calendar-o fa-stack-1x fa-inverse"></i>
-								</span> Monday - Saturday, 8am to 10pm
+								</span> Monday - Friday, 8am to 5pm
 							</li>
 							<li>
 								<span class="fa-stack fa-lg">
 									<i class="fa fa-circle fa-stack-2x"></i>
 									<i class="fa fa-phone fa-stack-1x fa-inverse"></i>
-								</span> +62 0888 904 711
+								</span> +254 700 000000
 							</li>
 							<li>
 								<span class="fa-stack fa-lg">
 									<i class="fa fa-circle fa-stack-2x"></i>
 									<i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
-								</span> hello@medicio.com
+								</span> education@transnzoiacounty.co.ke
 							</li>
 
 						</ul>
@@ -204,7 +198,7 @@
 					<div class="wow fadeInDown" data-wow-delay="0.1s">
 					<div class="widget">
 						<h5>Our location</h5>
-						<p>The Suithouse V303, Kuningan City, Jakarta Indonesia 12940</p>
+						<p>The office of the CEC is located near the county offices</p>
 
 					</div>
 					</div>
@@ -212,11 +206,8 @@
 					<div class="widget">
 						<h5>Follow us</h5>
 						<ul class="company-social">
-								<li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li class="social-google"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li class="social-vimeo"><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
-								<li class="social-dribble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
+							<li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
 						</ul>
 					</div>
 					</div>
@@ -229,7 +220,8 @@
 				<div class="col-sm-6 col-md-6 col-lg-6">
 					<div class="wow fadeInLeft" data-wow-delay="0.1s">
 					<div class="text-left">
-					<p>&copy;Copyright - Medicio Theme. All rights reserved.</p>
+            <strong>Copyright &copy; 2017 Trans Nzoia County.</strong> All rights
+            reserved.
 					</div>
 					</div>
 				</div>
@@ -237,7 +229,7 @@
 					<div class="wow fadeInRight" data-wow-delay="0.1s">
 					<div class="text-right">
 						<div class="credits">
-              <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Developed</a> by <a href="imond.co.ke">iMond Developers</a>
             </div>
 					</div>
 					</div>

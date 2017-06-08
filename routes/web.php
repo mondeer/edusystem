@@ -51,6 +51,17 @@ Route::get('/school/admin', function(){
   return view('schools.dashboard');
 });
 
+Route::get('/schooladmin/teacher/add', 'TutorCtrl@index');
+
+Route::post('/schooladmin/teacher/add', 'TutorCtrl@addTutor');
+
+Route::get('/schooladmin/expenses/add', 'ExpenseCtrl@index');
+
+Route::post('/schooladmin/expenses/add', 'ExpenseCtrl@addExpense');
+
+
+// end school admin routes
+
 // sms api
 
 Route::get('/send', 'SmsCtrl@sms');

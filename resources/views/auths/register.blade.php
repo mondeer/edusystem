@@ -2,15 +2,14 @@
 
 @section('content')
 
-<div class="" data-wow-offset="0" data-wow-delay="0.1s">
-<h2 class="h-ultra">Register To the System</h2>
+<div data-wow-offset="0" data-wow-delay="0.1s">
+  <br><br>
+<h2 class="h-ultra imondwhite">Register To the System</h2>
 </div>
 <div class="" data-wow-offset="0" data-wow-delay="0.1s">
-<h4 class="h-light">Provide Details</h4>
+<h4 class="h-light imondwhite">Provide Details</h4>
 </div>
   <div class="well">
-
-  <h1 class="imondwhite">Fill Out the form</h1>
   <form class="form-horizontal" role="form" method="POST" action="/system/register">
       {{ csrf_field() }}
 
