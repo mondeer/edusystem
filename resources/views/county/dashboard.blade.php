@@ -120,6 +120,19 @@
 
         <li class="treeview">
           <a href="#">
+            <i class="fa fa-bar-chart"></i> <span>Teachers</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/countyadmin/tutor/add"><i class="fa fa-pencil"></i> Add Tutor</a></li>
+            <li><a href="/countyadmin/tutors/view"><i class="fa fa-eye"></i> View Tutors </a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
             <i class="fa fa-money"></i> <span>Manage Fees</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>

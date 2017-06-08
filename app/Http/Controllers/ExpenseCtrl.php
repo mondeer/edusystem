@@ -28,8 +28,19 @@ class ExpenseCtrl extends Controller
       $expense->photo = $request->input('photo');
       $expense->save();
 
-      return json_encode($expense);
+      return redirect('/schooladmin/expenses/view');
+    }
 
+    public function viewExpense() {
+      $email = Sentinel::getUser()->email;
+
+      $shule = School::where('email', $email)->get()->first();
+
+      $expenses = Expense::where('school_id', $shule->id)->get();
+
+      // dd($expenses);
+
+      return view('schools.expenses.view')->with('expenses', $expenses);
 
     }
 }

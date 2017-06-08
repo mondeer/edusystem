@@ -27,7 +27,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label">Date of Expenditure</label>
                 <div class="col-md-6">
-                    <input type="date" class="form-control" name="expense_date" value="{{ old('expense_date') }}">
+                    <input type="date" class="form-control datepicker" name="expense_date" value="{{ old('expense_date') }}">
                 </div>
             </div>
 

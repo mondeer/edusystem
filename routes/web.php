@@ -42,6 +42,7 @@ Route::get('/county/school/{id}', 'SchoolCtrl@edit');
 
 Route::put('/county/school/{id}', 'SchoolCtrl@update');
 
+Route::get('/countyadmin/tutors/view', 'TutorCtrl@viewTutors');
 
 // end county admin routes
 
@@ -55,9 +56,15 @@ Route::get('/schooladmin/teacher/add', 'TutorCtrl@index');
 
 Route::post('/schooladmin/teacher/add', 'TutorCtrl@addTutor');
 
+Route::get('/schooladmin/teacher/view', 'TutorCtrl@viewTutor');
+
+Route::delete('/schooladmin/teacher/{id}/delete', 'TutorCtrl@destroy');
+
 Route::get('/schooladmin/expenses/add', 'ExpenseCtrl@index');
 
 Route::post('/schooladmin/expenses/add', 'ExpenseCtrl@addExpense');
+
+Route::get('/schooladmin/expenses/view', 'ExpenseCtrl@viewExpense');
 
 
 // end school admin routes

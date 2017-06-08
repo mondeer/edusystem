@@ -128,8 +128,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-money"></i> Add Teacher</a></li>
-            <li><a href="#"><i class="fa fa-money"></i> Allocate Units </a></li>
+            <li><a href="/schooladmin/teacher/add"><i class="fa fa-pencil"></i> Add Teacher</a></li>
+            <li><a href="/schooladmin/teacher/view"><i class="fa fa-eye"></i> View Tutors </a></li>
+            <li><a href="/schooladmin/teacher/view"><i class="fa fa-eye"></i> Allocate Units </a></li>
           </ul>
         </li>
 
@@ -143,7 +144,7 @@
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-money"></i> Fee Allocation</a></li>
             <li><a href="#"><i class="fa fa-money"></i> Payments </a></li>
-            <li><a href="#"><i class="fa fa-money"></i> Expenses </a></li>
+            <li><a href="/schooladmin/expenses/view"><i class="fa fa-money"></i> Expenses </a></li>
 
           </ul>
         </li>
@@ -157,7 +158,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-pencil"></i> Acquisition Request</a></li>
-            <li><a href="#"><i class="fa fa-binoculars"></i> Track Acquisition Status</a></li>
+            <li><a href="#"><i class="fa fa-binoculars"></i>Acquisition Status</a></li>
             <li><a href="#"><i class="fa fa-eye"></i> Check VCT Assets</a></li>
           </ul>
         </li>
@@ -208,6 +209,12 @@
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
+</script>
+
+<script>
+  $(".delete").on("submit", function(){
+    return confirm("You are about to delete a leave record, Continue?");
+  });
 </script>
 <!-- Bootstrap 3.3.6 -->
 <script src="{{ asset ('dash/bootstrap/js/bootstrap.min.js')}}"></script>

@@ -42,6 +42,38 @@ class TutorCtrl extends Controller
       $role = Sentinel::findRoleBySlug('tutor');
       $role->users()->attach($user);
 
-      return json_encode($tutor);
+      return redirect('/schooladmin/teacher/view');
+    }
+
+    public function viewTutor() {
+      $email = Sentinel::getUser()->email;
+
+      $school = School::where('email', $email)->get()->first();
+
+      $tutors = Teacher::where('school_id', $school->id)->get();
+
+      return view('schools.teachers.view')->with('tutors', $tutors);
+    }
+
+    public function destroy($id) {
+      $tutor = Teacher::findOrFail($id);
+
+      $email = [
+        'login' => $tutor->email,
+      ];
+
+      $user = Sentinel::findByCredentials($email);
+
+      $user->delete();
+
+      $tutor->delete();
+
+      return redirect()->back();
+    }
+
+    public function viewTutors() {
+      $tutors = Teacher::all();
+
+      return view('county.teachers.view')->with('tutors', $tutors);
     }
 }
