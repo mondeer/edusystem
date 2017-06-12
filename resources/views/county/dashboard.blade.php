@@ -9,6 +9,8 @@
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="{{ asset ('dash/bootstrap/css/bootstrap.min.css')}}">
   {!! Charts::assets() !!}
+  <link rel="stylesheet" href="{{ asset ('dash/ionicons/css/ionicons.min.css')}}">
+  <link rel="stylesheet" href="{{ asset ('dash/font-awesome-4.7.0/css/font-awesome.min.css')}}">
   <link rel="stylesheet" href="{{ asset ('dash/bootstrap/js/bootstrap-formhelpers-phone.js')}}">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">

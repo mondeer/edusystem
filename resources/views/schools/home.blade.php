@@ -48,14 +48,14 @@
 
   <div class="col-lg-3 col-xs-6">
     <!-- small box -->
-    <div class="small-box bg-yellow">
+    <div class="small-box bg-red">
       <div class="inner">
         <h3>{{$expenses}}</h3>
 
         <p>Vocational Training Centers</p>
       </div>
       <div class="icon">
-        <i class="ion ion-person-add"></i>
+        <i class="ion ion-cash"></i>
       </div>
       <a href="/countyadmin/expenses/viewall" class="small-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
     </div>
