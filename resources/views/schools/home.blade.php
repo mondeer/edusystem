@@ -27,7 +27,7 @@
       <div class="icon">
         <i class="ion ion-person-add"></i>
       </div>
-      <a href="/countyadmin/students/view" class="small-box-footer">Add More <i class="fa fa-arrow-circle-right"></i></a>
+      <a href="/schooladmin/students/view" class="small-box-footer">View <i class="fa fa-arrow-circle-right"></i></a>
     </div>
   </div>
 
@@ -42,7 +42,7 @@
       <div class="icon">
         <i class="ion ion-person-add"></i>
       </div>
-      <a href="/countyadmin/tutors/view" class="small-box-footer">Add More <i class="fa fa-arrow-circle-right"></i></a>
+      <a href="/schooladmin/teacher/view" class="small-box-footer">View <i class="fa fa-arrow-circle-right"></i></a>
     </div>
   </div>
 
@@ -57,7 +57,7 @@
       <div class="icon">
         <i class="ion ion-cash"></i>
       </div>
-      <a href="/countyadmin/expenses/viewall" class="small-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+      <a href="/schooladmin/expenses/view" class="small-box-footer">View <i class="fa fa-arrow-circle-right"></i></a>
     </div>
   </div>
 <hr>

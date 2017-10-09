@@ -53,17 +53,45 @@
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
-
       <div class="navbar-custom-menu">
-        <a class="btn btn-lg btn-danger" href="{{ url('/logout') }}"
-            onclick="event.preventDefault();
-                     document.getElementById('logout-form').submit();">
-            Logout
-        </a>
+        <ul class="nav navbar-nav" >
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="{{ asset ('img/avatar4.png')}}" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{Sentinel::getUser()->first_name}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="{{ asset ('img/avatar4.png')}}" class="img-circle" alt="User Image">
 
-        <form id="logout-form" action="/logout" method="POST" style="display: none;">
-            {{ csrf_field() }}
-        </form>
+                <p>
+                  {{Sentinel::getUser()->first_name}} - The Admin
+                  <small>The Director</small>
+                </p>
+              </li>
+             
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="/schooladmin/profile" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a class="btn btn-flat btn-danger" href="{{ url('/logout') }}"
+                      onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                      Logout
+                  </a>
+
+                  <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                  </form>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </nav>
   </header>
@@ -77,7 +105,7 @@
           <img src="{{ asset ('img/avatar4.png')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>{{Sentinel::getUser()->first_name}} Admin</p>
+          <p>{{Sentinel::getUser()->first_name}} The Admin</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>

@@ -6,18 +6,24 @@ Route::get('/', function () {
 
 // auth routes
 
-Route::get('/system/register', 'RegisterCtrl@register');
-
-Route::post('/system/register', 'RegisterCtrl@postRegister');
-
 Route::post('/login', 'LoginCtrl@login');
 
 
 Route::post('/logout', 'LoginCtrl@logout');
 
 // System Admin routes
-Route::get('/system/admin', function(){
-  return view('system.dashboard');
+Route::group(['middleware' => 'sysadmin'], function(){
+  Route::get('/system/admin', function(){
+    return view('system.dashboard');
+  });
+
+  Route::get('/system/register', 'RegisterCtrl@register');
+
+  Route::post('/system/register', 'RegisterCtrl@postRegister');
+  
+  Route::get('/send', 'SmsCtrl@sms');
+
+  Route::post('/send', 'SmsCtrl@smsPost');
 });
 
 
@@ -26,69 +32,70 @@ Route::get('/system/admin', function(){
 
 
 // County Admin routes
-Route::get('/county/admin', 'AdminCtrl@index');
+Route::group(['middleware' => 'countyadmin'], function(){
+  Route::get('/county/admin', 'AdminCtrl@index');
 
-Route::get('/county/schools/create', 'SchoolCtrl@create');
+  Route::get('/county/schools/create', 'SchoolCtrl@create');
 
-Route::post('/county/schools/create', 'SchoolCtrl@postCreate');
+  Route::post('/county/schools/create', 'SchoolCtrl@postCreate');
 
-Route::get('/county/schools/view', 'SchoolCtrl@view');
+  Route::get('/county/schools/view', 'SchoolCtrl@view');
 
-Route::delete('/county/school/{id}', 'SchoolCtrl@destroy');
+  Route::delete('/county/school/{id}', 'SchoolCtrl@destroy');
 
-Route::get('/county/school/{id}', 'SchoolCtrl@edit');
+  Route::get('/county/school/{id}', 'SchoolCtrl@edit');
 
-Route::put('/county/school/{id}', 'SchoolCtrl@update');
+  Route::put('/county/school/{id}', 'SchoolCtrl@update');
 
-Route::get('/countyadmin/tutors/view', 'TutorCtrl@viewTutors');
+  Route::get('/countyadmin/tutors/view', 'TutorCtrl@viewTutors');
 
-Route::get('/countyadmin/students/view', 'StudentCtrl@students');
+  Route::get('/countyadmin/students/view', 'StudentCtrl@students');
 
-Route::get('/countyadmin/expenses/viewall', 'ExpenseCtrl@allExpenses');
+  Route::get('/countyadmin/expenses/viewall', 'ExpenseCtrl@allExpenses');
 
-Route::delete('/countyadmin/expense/{id}/delete', 'ExpenseCtrl@destroy');
+  Route::delete('/countyadmin/expense/{id}/delete', 'ExpenseCtrl@destroy');
+});
 
 // end county admin routes
 
 
 // School Admin routes
-Route::get('/school/admin', 'SchminCtrl@index');
+Route::group(['middleware' => 'schooladmin'], function(){
+  Route::get('/school/admin', 'SchminCtrl@index');
 
-Route::get('/schooladmin/teacher/add', 'TutorCtrl@index');
+  Route::get('/schooladmin/teacher/add', 'TutorCtrl@index');
 
-Route::post('/schooladmin/teacher/add', 'TutorCtrl@addTutor');
+  Route::post('/schooladmin/teacher/add', 'TutorCtrl@addTutor');
 
-Route::get('/schooladmin/teacher/view', 'TutorCtrl@viewTutor');
+  Route::get('/schooladmin/teacher/view', 'TutorCtrl@viewTutor');
 
-Route::delete('/schooladmin/teacher/{id}/delete', 'TutorCtrl@destroy');
+  Route::delete('/schooladmin/teacher/{id}/delete', 'TutorCtrl@destroy');
 
-Route::get('/schooladmin/expenses/add', 'ExpenseCtrl@index');
+  Route::get('/schooladmin/expenses/add', 'ExpenseCtrl@index');
 
-Route::post('/schooladmin/expenses/add', 'ExpenseCtrl@addExpense');
+  Route::post('/schooladmin/expenses/add', 'ExpenseCtrl@addExpense');
 
-Route::get('/schooladmin/expenses/view', 'ExpenseCtrl@viewExpense');
+  Route::get('/schooladmin/expenses/view', 'ExpenseCtrl@viewExpense');
 
-Route::get('/schooladmin/assets/request', 'AssetCtrl@index');
+  Route::get('/schooladmin/assets/request', 'AssetCtrl@index');
 
-Route::post('/schooladmin/assets/request', 'AssetCtrl@reqAsset');
+  Route::post('/schooladmin/assets/request', 'AssetCtrl@reqAsset');
 
-Route::get('/schooladmin/assets/view', 'AssetCtrl@viewAssets');
+  Route::get('/schooladmin/assets/view', 'AssetCtrl@viewAssets');
 
-Route::get('/schooladmin/students/enroll', 'StudentCtrl@index');
+  Route::get('/schooladmin/students/enroll', 'StudentCtrl@index');
 
-Route::post('/schooladmin/students/enroll', 'StudentCtrl@enrollStudent');
+  Route::post('/schooladmin/students/enroll', 'StudentCtrl@enrollStudent');
 
-Route::get('/schooladmin/students/view', 'StudentCtrl@viewStudent');
+  Route::get('/schooladmin/students/view', 'StudentCtrl@viewStudent');
 
-Route::delete('/schooladmin/students/{id}/delete', 'StudentCtrl@destroy');
+  Route::delete('/schooladmin/students/{id}/delete', 'StudentCtrl@destroy');
 
-Route::get('/invoice', function(){
-  return view('schools.expenses.receipt');
+  Route::get('/invoice', function(){
+    return view('schools.expenses.receipt');
+  });
 });
 // end school admin routes
 
 // sms api
 
-Route::get('/send', 'SmsCtrl@sms');
-
-Route::post('/send', 'SmsCtrl@smsPost');

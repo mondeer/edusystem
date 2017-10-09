@@ -37,7 +37,8 @@ class StudentCtrl extends Controller
       $student->guardian = $request->input('guardian');
       $student->save();
 
-      return redirect()->back();
+      return json_encode($student);
+      // return redirect()->back();
     }
 
     public function viewStudent() {

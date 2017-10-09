@@ -56,5 +56,8 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \transcounty\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'countyadmin' => \transcounty\Http\Middleware\AdminMiddleware::class,
+        'schooladmin' => \transcounty\Http\Middleware\SchoolMiddleware::class,
+        'sysadmin' => \transcounty\Http\Middleware\SystemMiddleware::class,
     ];
 }
