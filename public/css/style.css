@@ -21,6 +21,10 @@ body {
     line-height: 1.6em;
 }
 
+.imgradius {
+  border-radius: 50%;
+}
+
 .imond {
   background-color: rgba(63,187,192,0.7);
 }

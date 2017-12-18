@@ -55,15 +55,44 @@
       </a>
 
       <div class="navbar-custom-menu imondbg">
-            <a class="btn imondblack btn-lg btn-danger" href="{{ url('/logout') }}"
-                onclick="event.preventDefault();
-                         document.getElementById('logout-form').submit();">
-                Logout
+        <ul class="nav navbar-nav" >
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="{{ asset ('img/avatar4.png')}}" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{Sentinel::getUser()->first_name}}</span>
             </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="{{ asset ('img/avatar4.png')}}" class="img-circle" alt="User Image">
 
-            <form id="logout-form" action="/logout" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
+                <p>
+                  {{Sentinel::getUser()->first_name}} - The Chief Officer
+                  <small>County || Admin</small>
+                </p>
+              </li>
+
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="/county/admin/profile" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a class="btn btn-flat btn-danger" href="{{ url('/logout') }}"
+                      onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                      Logout
+                  </a>
+
+                  <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                  </form>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </nav>
   </header>
@@ -128,7 +157,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/countyadmin/tutor/add"><i class="fa fa-pencil"></i> Add Tutor</a></li>
+            <!-- <li><a href="/countyadmin/tutor/add"><i class="fa fa-pencil"></i> Add Tutor</a></li> -->
             <li><a href="/countyadmin/tutors/view"><i class="fa fa-eye"></i> View Tutors </a></li>
           </ul>
         </li>
@@ -141,9 +170,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/countyadmin/school/fee"><i class="fa fa-money"></i> Fee Audit </a></li>
+            <!-- <li><a href="/countyadmin/school/fee"><i class="fa fa-money"></i> Fee Audit </a></li> -->
             <li><a href="/countyadmin/expenses/viewall"><i class="fa fa-money"></i> View VTC Expenses</a></li>
-            <li><a href="/countyadmin/bugdet/allocate"><i class="fa fa-money"></i> Allocate Budget</a></li>
+            <!-- <li><a href="/countyadmin/bugdet/allocate"><i class="fa fa-money"></i> Allocate Budget</a></li> -->
           </ul>
         </li>
 

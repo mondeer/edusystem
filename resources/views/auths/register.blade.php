@@ -26,6 +26,7 @@
               <input id="name" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" required autofocus>
           </div>
       </div>
+      
 
       <div class="form-group">
           <label for="name" class="col-md-4 control-label">Last Name</label>

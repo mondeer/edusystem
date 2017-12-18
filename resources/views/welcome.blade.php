@@ -43,7 +43,7 @@
             <p class="bold text-center">Today: {{ Carbon\Carbon::now()->format('l j F Y')}} </p>
 					</div>
 					<div class="col-sm-4 col-md-4">
-					<p class="bold text-right">Call us now +254 700 000000</p>
+					<p class="bold text-right">County Admin +254 724 122411 </p>
 					</div>
 				</div>
 			</div>
@@ -128,7 +128,7 @@
 					</div>
 					<div class="col-lg-6 ">
 						<div class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.2s">
-						<img src="img/kha.jpg" class="img-responsive" alt="" />
+						<img src="img/jpg1.jpg" class="img-responsive imgradius" alt="" />
 						</div>
 					</div>
 				</div>

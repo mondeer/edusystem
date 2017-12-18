@@ -2,6 +2,6 @@
 
 @section('content')
   <div class="alert alert-danger">
-    Damn, how lost can you get? go back please!!
+    Apologies, that page cant be found!!
   </div>
 @endsection
