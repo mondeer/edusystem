@@ -20,7 +20,9 @@ Route::group(['middleware' => 'sysadmin'], function(){
   Route::get('/system/register', 'RegisterCtrl@register');
 
   Route::post('/system/register', 'RegisterCtrl@postRegister');
-  
+
+  Route::get('/system/view/users', 'System\viewusersCtrl@viewUsers');
+
   Route::get('/send', 'SmsCtrl@sms');
 
   Route::post('/send', 'SmsCtrl@smsPost');
@@ -98,4 +100,3 @@ Route::group(['middleware' => 'schooladmin'], function(){
 // end school admin routes
 
 // sms api
-

@@ -18,7 +18,7 @@
             {{ session('error') }}
           </div>
       @endif
-      
+
       <div class="form-group">
           <label for="name" class="col-md-4 control-label">First Name</label>
 
@@ -26,7 +26,7 @@
               <input id="name" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" required autofocus>
           </div>
       </div>
-      
+
 
       <div class="form-group">
           <label for="name" class="col-md-4 control-label">Last Name</label>
@@ -49,6 +49,7 @@
           <div class="col-md-4">
             <select class="form-control" name="role">
               <option></option>
+              <option value="system">System Admin</option>
               <option value="county">County Admin</option>
               <option value="school">School Admin</option>
             </select>

@@ -8,6 +8,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="{{ asset ('dash/bootstrap/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{ asset ('dash/imond.css') }}">
   <link rel="stylesheet" href="{{ asset ('dash/ionicons/css/ionicons.min.css')}}">
   <link rel="stylesheet" href="{{ asset ('dash/font-awesome-4.7.0/css/font-awesome.min.css')}}">
   {!! Charts::assets() !!}
@@ -71,7 +72,7 @@
                   <small>Web Dev</small>
                 </p>
               </li>
-             
+
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
