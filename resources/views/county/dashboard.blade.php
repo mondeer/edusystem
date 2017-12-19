@@ -222,7 +222,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2017 <a href="imond.co.ke">iMond Developers</a>.</strong> All rights
+    <strong>Copyright &copy; 2017 <a href="https://imond.co.ke" target="_blank">iMond Developers</a>.</strong> All rights
     reserved.
   </footer>
 

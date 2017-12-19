@@ -13,9 +13,7 @@ Route::post('/logout', 'LoginCtrl@logout');
 
 // System Admin routes
 Route::group(['middleware' => 'sysadmin'], function(){
-  Route::get('/system/admin', function(){
-    return view('system.dashboard');
-  });
+  Route::get('/system/admin', 'System\homeCtrl@index');
 
   Route::get('/system/register', 'RegisterCtrl@register');
 
