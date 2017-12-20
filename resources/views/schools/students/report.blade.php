@@ -1,9 +1,29 @@
-@extends('schools.dashboard')
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
 
-@section('content')
-    <div class="col-md-10">
-      <a class="btn btn-success btn-lg pull-right" href="/schooladmin/students/enroll">Enroll Student</a>
-      <a class="btn btn-success btn-lg pull-left" href="{{action('StudentCtrl@downloadStudents')}}">DownloadPDF</a>
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Main content -->
+      <section class="invoice">
+        <!-- title row -->
+        <div class="row">
+          <div class="col-xs-12 col-lg-12 col-md-12 text-center">
+            <h2 class="page-header">
+              <i class="fa fa-globe"></i> {{$school->name}}.<br>
+              Address: {{ $school->location }}<br>
+              Email:   {{ $school->email }} <br>
+              <hr>
+              <small class="pull-right"></small>
+            </h2>
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- info row -->
         <table id="example2" class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -34,16 +54,13 @@
                   <td>{{$student->national_id}}</td>
                   <td>{{$student->mobile}}</td>
                   <td>{{$student->address}}</td>
-                  <td>
-                    <form class="deletestu" action="/schooladmin/students/{{ $student->id }}/delete" method="post">
-                      <input type="hidden" name="_method" value="delete">
-                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                      <input type="submit" class="btn btn-danger" value="Delete">
-                    </form>
-                  </td>
                 </tr>
               @endforeach
             </tbody>
         </table>
+      </section>
+      <!-- /.content -->
     </div>
-@endsection
+    <!-- ./wrapper -->
+  </body>
+</html>

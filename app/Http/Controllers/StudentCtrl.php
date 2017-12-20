@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use transcounty\School;
 use transcounty\Student;
 use Sentinel;
+use PDF;
 
 class StudentCtrl extends Controller
 {
@@ -37,8 +38,8 @@ class StudentCtrl extends Controller
       $student->guardian = $request->input('guardian');
       $student->save();
 
-      return json_encode($student);
-      // return redirect()->back();
+      // return json_encode($student);
+      return redirect()->back();
     }
 
     public function viewStudent() {
@@ -49,6 +50,17 @@ class StudentCtrl extends Controller
       $students = Student::where('school_id', $school->id)->get();
 
       return view('schools.students.view')->with('students', $students);
+    }
+
+    public function downloadStudents() {
+      $email = Sentinel::getUser()->email;
+
+      $school = School::where('email', $email)->get()->first();
+
+      $students = Student::where('school_id', $school->id)->get();
+
+      $pdf = PDF::loadView('schools.students.report', compact('students', 'school'))->setPaper('a4', 'landscape');
+      return $pdf->download('students.pdf');
     }
 
     public function students() {

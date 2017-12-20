@@ -43,7 +43,7 @@
             <p class="bold text-center">Today: {{ Carbon\Carbon::now()->format('l j F Y')}} </p>
 					</div>
 					<div class="col-sm-4 col-md-4">
-					<p class="bold text-right">County Admin +254 724 122411 </p>
+					<p class="bold text-right">County 026 +254 724 122411 </p>
 					</div>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
                   <i class="fa fa-bars"></i>
               </button>
               <a class="navbar-brand" href="/">
-                  <img src="img/logo.png" alt="" width="150" height="40" />
+                  <img src="img/logo.gif" alt="" width="150" height="40" />
               </a>
           </div>
 

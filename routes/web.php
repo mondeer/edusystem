@@ -91,10 +91,10 @@ Route::group(['middleware' => 'schooladmin'], function(){
 
   Route::delete('/schooladmin/students/{id}/delete', 'StudentCtrl@destroy');
 
-  Route::get('/invoice', function(){
-    return view('schools.expenses.receipt');
-  });
-});
+  Route::get('schooladmin/students/report', 'StudentCtrl@downloadStudents');
+
+  Route::get('/invoice/{id}', 'ExpenseCtrl@downloadExpense');
 // end school admin routes
 
 // sms api
+});

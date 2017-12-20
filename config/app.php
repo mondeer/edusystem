@@ -179,6 +179,7 @@ return [
         Kagga\Telco\TelcoServiceProvider::class,
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
         ConsoleTVs\Charts\ChartsServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
 
     ],
@@ -234,8 +235,7 @@ return [
         'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
-
-
+        'PDF' => Barryvdh\DomPDF\Facade::class,
     ],
 
 ];

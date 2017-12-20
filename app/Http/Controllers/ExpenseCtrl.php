@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use transcounty\Expense;
 use transcounty\School;
 use Sentinel;
+use PDF;
 
 class ExpenseCtrl extends Controller
 {
@@ -46,6 +47,13 @@ class ExpenseCtrl extends Controller
       $schools = School::with('expenses')->get();
 
       return view('county.expenses.view')->with('schools', $schools);
+    }
+
+    public function downloadExpense($id) {
+      $expense = Expense::find($id);
+
+      $pdf = PDF::loadView('schools.expenses.receipt', compact('expense'));
+      return $pdf->download('invoice.pdf');
     }
 
     public function destroy($id) {

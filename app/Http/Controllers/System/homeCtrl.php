@@ -9,7 +9,7 @@ use transcounty\Student;
 use transcounty\Expense;
 use transcounty\Teacher;
 use Charts;
-use transcounty\Sessions;
+use transcounty\Sessions as sessions;
 
 
 class homeCtrl extends Controller
@@ -20,7 +20,7 @@ class homeCtrl extends Controller
       $expenses = Expense::all()->sum('amount');
       $tutors = Teacher::all();
 
-      $online_users = Sessions::all();
+      $online_users = sessions::all();
 
 
       $enrollment = Charts::database(Student::all(), 'bar', 'highcharts')

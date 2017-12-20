@@ -10,7 +10,7 @@
                 <th>Expenditure Name</th>
                 <th>Expenditure Amount</th>
                 <th>Expenditure Date</th>
-                <th>Deregister</th>
+                <th>Download PDF</th>
               </tr>
             </thead>
             <tbody>
@@ -20,13 +20,7 @@
                   <td>{{$expense->expense_name}}</td>
                   <td>{{$expense->amount}}</td>
                   <td>{{$expense->expense_date}}</td>
-                  <td>
-                    <form class="delete" action="/schooladmin/{{ $expense->id }}" method="post">
-                      <input type="hidden" name="_method" value="delete">
-                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                      <input type="submit" class="btn btn-danger" value="Delete">
-                    </form>
-                  </td>
+                  <td><a href="{{action('ExpenseCtrl@downloadExpense', $expense->id)}}">DownloadPDF</a></td>
                 </tr>
               @endforeach
             </tbody>
